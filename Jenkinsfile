@@ -19,9 +19,9 @@ pipeline {
           }
         }
      }
-        stage('Third Stage') {
+        stage('Download Ansible Code') {
             steps {
-                echo "Third stage"
+               'git@github.com:johnalberto22/ansible-webserver.git'
             }
         }
     }
