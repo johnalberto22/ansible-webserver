@@ -24,7 +24,6 @@ pipeline {
                 git branch: 'main', credentialsId: 'git-repo-creds', url: 'git@github.com:johnalberto22/ansible-webserver.git'
             }
         }
-    }
 
         stage('Run ansible-lint against playbook') {
             steps {
@@ -32,7 +31,7 @@ pipeline {
            sh 'docker run --rm -v $WORKSPACE/playbooks:/data cytopia/ansible-lint:4 website-update.yml'
            sh 'docker run --rm -v $WORKSPACE/playbooks:/data cytopia/ansible-lint:4 website-test.yml'
            }
-
         }
+    }
 }
 
